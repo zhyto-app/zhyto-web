@@ -24,7 +24,7 @@
 .opt{position:relative;cursor:pointer;border-radius:22px;overflow:hidden;border:2px solid transparent;background:radial-gradient(120% 140% at 85% 15%,#1d4a43 0%,#0F2E2A 60%);color:#F5EEDC;min-height:170px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .15s,border-color .15s;text-align:left;font:inherit}
 .opt:active{transform:scale(.98)}
 .opt img{width:34px;height:34px;border-radius:9px}
-.opt .s{font:700 22px/1.15 'Geologica',sans-serif;letter-spacing:-.01em;margin-top:18px}
+/**/.opt .s{font:700 21px/1.15 'Geologica',sans-serif;letter-spacing:-.01em;margin-top:18px}
 .opt .s span{color:#E4B456}
 .opt .tick{position:absolute;top:14px;right:14px;width:26px;height:26px;border-radius:50%;border:2px solid rgba(245,238,220,.5);display:grid;place-items:center;font-size:15px;color:#0F2E2A}
 .opt.on{border-color:#E4B456}
@@ -67,21 +67,21 @@
   var OPTS = [
     ['less', 'Менше рахувати. <span>Більше жити.</span>'],
     ['live', 'Живи. <span>Жито порахує.</span>'],
-    ['notcount', 'Жити, <span>а не рахувати.</span>'],
-    ['grain', '<span>Зерно до зерна.</span>'],
-    ['place', 'Усе стає <span>на свої місця.</span>'],
-    ['edge', 'Видно <span>до краю.</span>'],
-    ['know', 'Знай. <span>Не рахуй.</span>'],
+    ['control', 'Гроші не керують тобою. <span>Ти керуєш ними.</span>'],
     ['grow', 'Гроші ростуть, <span>коли їх видно.</span>'],
-    ['quiet', 'Тихо. Ясно. <span>Твоє.</span>'],
-    ['seed', 'Кожне зернятко <span>важить.</span>']
+    ['grain', '<span>Зерно до зерна.</span>'],
+    ['sow', 'Що посієш — <span>те й видно.</span>'],
+    ['seedmatters', 'Кожна зернина <span>має значення.</span>'],
+    ['place', 'Усе стає <span>на свої місця.</span>'],
+    ['fuss', 'Менше метушні. <span>Більше життя.</span>'],
+    ['small', 'З малих зерен — <span>велике.</span>']
   ];
   // Random order for each visitor, so the first cards don't win just by being first.
   for (var i = OPTS.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = OPTS[i]; OPTS[i] = OPTS[j]; OPTS[j] = t; }
   var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   var voter = store.get('zv') || ('v' + Math.random().toString(36).slice(2) + Date.now().toString(36));
   store.set('zv', voter);
-  var picked = (store.get('zp') || '').split(',').filter(Boolean);
+  var picked = (store.get('zp2') || '').split(',').filter(Boolean);
   var box = document.getElementById('cards'), go = document.getElementById('go'), body = document.body;
   OPTS.forEach(function (o) {
     var b = document.createElement('button');
@@ -113,7 +113,7 @@
     go.disabled = true;
     fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ voter: voter, choices: picked, own: document.getElementById('own').value }) })
       .then(function (r) { return r.json(); })
-      .then(function (r) { store.set('zp', picked.join(',')); show(r); document.getElementById('thanks').scrollIntoView({ behavior: 'smooth', block: 'center' }); })
+      .then(function (r) { store.set('zp2', picked.join(',')); show(r); document.getElementById('thanks').scrollIntoView({ behavior: 'smooth', block: 'center' }); })
       .catch(function () { alert('Не вдалося надіслати. Спробуйте ще раз.'); })
       .then(function () { go.disabled = !picked.length; });
   };
