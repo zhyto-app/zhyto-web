@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Як користуватися Жито · Zhyto</title>
+<meta name="description" content="Коротко і по кроках. Кожен розділ — одна справа, кілька натискань.">
+<meta name="theme-color" content="#0F2E2A">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="alternate" hreflang="uk" href="https://zhyto.app/guide/uk/"><link rel="alternate" hreflang="en" href="https://zhyto.app/guide/en/"><link rel="alternate" hreflang="pl" href="https://zhyto.app/guide/pl/"><link rel="alternate" hreflang="de" href="https://zhyto.app/guide/de/"><link rel="alternate" hreflang="fr" href="https://zhyto.app/guide/fr/"><link rel="alternate" hreflang="es" href="https://zhyto.app/guide/es/"><link rel="alternate" hreflang="it" href="https://zhyto.app/guide/it/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; padding: 0; list-style: none; }
+.toc a { display: inline-block; padding: 8px 14px; border-radius: 999px; background: var(--s1); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 14px; }
+.sec { background: var(--s1); border: 1px solid var(--line); border-radius: 22px; padding: 22px; margin: 18px 0; display: flex; flex-direction: column; gap: 18px; }
+.sec .txt { display: flex; flex-direction: column; gap: 10px; }
+.sec h2 { margin: 0; }
+.sec .why { color: var(--muted); margin: 0; font-size: 17px; }
+.sec .steps { margin: 0; }
+.sec .steps li { font-size: 17px; }
+.shot { margin: 0; text-align: center; }
+.shot img { width: 100%; max-width: 300px; border-radius: 28px; border: 1px solid var(--line); box-shadow: 0 12px 32px rgba(15,46,42,.14); }
+.langs { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 14px; }
+.langs a { color: var(--muted); text-decoration: none; }
+.langs b { color: var(--ink); font-weight: 600; }
+@media (min-width: 700px) { .sec.has-shot { flex-direction: row; align-items: flex-start; } .sec.has-shot .txt { flex: 1; } .sec.has-shot .shot { width: 280px; flex: none; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/icon.png" alt=""><span>Жито</span></a>
+    <nav class="langs"><b>Українська</b><a href="/guide/en/" hreflang="en">English</a><a href="/guide/pl/" hreflang="pl">Polski</a><a href="/guide/de/" hreflang="de">Deutsch</a><a href="/guide/fr/" hreflang="fr">Français</a><a href="/guide/es/" hreflang="es">Español</a><a href="/guide/it/" hreflang="it">Italiano</a></nav>
+  </header>
+  <h1>Як користуватися Жито</h1>
+  <p class="lead">Коротко і по кроках. Кожен розділ — одна справа, кілька натискань.</p>
+  <ul class="toc" aria-label="Зміст"><li><a href="#home">Головний екран</a></li><li><a href="#add">Записати витрату</a></li><li><a href="#income">Дохід і зарплата</a></li><li><a href="#accounts">Рахунки й картки</a></li><li><a href="#monobank">monobank сам підтягує витрати</a></li><li><a href="#applepay">Apple Pay на iPhone</a></li><li><a href="#android">Сповіщення банку на Android</a></li><li><a href="#family">Родина: бюджет разом</a></li><li><a href="#plans">Плани: регулярні платежі й цілі</a></li><li><a href="#analytics">Куди йдуть гроші</a></li><li><a href="#pro">Pro і 14 днів безкоштовно</a></li><li><a href="#help">Налаштування і допомога</a></li></ul>
+  <section class="sec has-shot" id="home">
+    <div class="txt"><h2>Головний екран</h2>
+    <p class="why">Тут видно, скільки грошей лишилось на місяць і де вони лежать.</p>
+    <ol class="steps"><li>Відкрийте Жито — ви одразу на вкладці «Огляд».</li><li>Коло показує, скільки ще можна витратити цього місяця.</li><li>Нижче — доходи й витрати за місяць і гроші на рахунках.</li><li>Стрілки вгорі перемикають місяці.</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/home.jpg" alt="Головний екран — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec has-shot" id="add">
+    <div class="txt"><h2>Записати витрату</h2>
+    <p class="why">Чим швидше записали — тим точніший бюджет. Обирайте зручний спосіб.</p>
+    <ol class="steps"><li>Натисніть велику кнопку «+» внизу.</li><li>Оберіть спосіб: «Чек» — сфотографуйте чек, «Голос» — скажіть «кава 85», «Банк» — скріншот із банку, «Вручну» — сума і категорія.</li><li>Перевірте суму, категорію й рахунок.</li><li>Натисніть «Зберегти».</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/add.jpg" alt="Записати витрату — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec has-shot" id="income">
+    <div class="txt"><h2>Дохід і зарплата</h2>
+    <p class="why">Щоб бачити, скільки прийшло, і не вносити зарплату щоразу.</p>
+    <ol class="steps"><li>Натисніть «+», потім «Вручну».</li><li>Угорі перемкніть «Витрата» на «Дохід».</li><li>Введіть суму і торкніться «Приходить щомісяця» — Жито сам нагадуватиме щомісяця.</li><li>Натисніть «Зберегти».</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/income.jpg" alt="Дохід і зарплата — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec has-shot" id="accounts">
+    <div class="txt"><h2>Рахунки й картки</h2>
+    <p class="why">Кожна картка і готівка — окремий рахунок, тож видно, де скільки.</p>
+    <ol class="steps"><li>Відкрийте «Налаштування» → «Рахунки».</li><li>Торкніться «+», щоб додати картку, готівку чи кредитку.</li><li>У записі витрати оберіть рахунок, з якого платили. У Родині спершу оберіть людину — «Я» чи ім’я — і побачите лише її рахунки.</li><li>«Порядок» вгорі — щоб розставити рахунки як зручно.</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/accounts.jpg" alt="Рахунки й картки — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec" id="monobank">
+    <div class="txt"><h2>monobank сам підтягує витрати</h2>
+    <p class="why">Підключили один раз — і всі оплати з карток mono з’являються самі. Це функція Pro, перші 14 днів безкоштовно.</p>
+    <ol class="steps"><li>Відкрийте «Налаштування» → «Банки».</li><li>Торкніться посилання — у monobank отримайте свій особистий токен (лише для читання).</li><li>Вставте його в Жито і оберіть картки.</li><li>Готово: нові оплати підтягуються самі. Токен зберігається лише на вашому телефоні.</li></ol></div>
+  </section>
+  <section class="sec has-shot" id="applepay">
+    <div class="txt"><h2>Apple Pay на iPhone</h2>
+    <p class="why">Приклали iPhone до термінала — витрата вже в Жито. Налаштовується один раз, приблизно за хвилину. Функція Pro.</p>
+    <ol class="steps"><li>Відкрийте «Налаштування» → «Автозапис Apple Pay».</li><li>Зробіть кроки з екрана, гортаючи картинки під ними: «Команди» → «Автоматизація» → «+» → «Гаманець».</li><li>Перша оплата новою карткою: Жито спитає, на який рахунок її записувати.</li><li>Передумали? У тому ж екрані торкніться картки в списку «Картки» й оберіть інший рахунок — старі записи переїдуть разом із нею.</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/walletpay.jpg" alt="Apple Pay на iPhone — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec" id="android">
+    <div class="txt"><h2>Сповіщення банку на Android</h2>
+    <p class="why">Прийшло сповіщення від банку — і витрата вже в Жито. Функція Pro.</p>
+    <ol class="steps"><li>Відкрийте «Налаштування» → «Автозапис оплат».</li><li>Натисніть кнопку і дозвольте Жито читати сповіщення.</li><li>Коли прийде сповіщення нового банку, Жито спитає, на який рахунок його записувати.</li><li>Якщо щось записалось не так — виправте запис, Жито запам’ятає.</li></ol></div>
+  </section>
+  <section class="sec" id="family">
+    <div class="txt"><h2>Родина: бюджет разом</h2>
+    <p class="why">Кожен вносить свої витрати, а спільні видно обом. Особисте можна позначити «лише я».</p>
+    <ol class="steps"><li>Відкрийте «Налаштування» → «Родина» і створіть родину.</li><li>«Створити код і поділитися» — надішліть код партнерові — він вводить його у своєму Жито.</li><li>Переказали гроші одне одному? Запишіть «Переказ» — Жито не порахує їх двічі.</li><li>Хто кому винен — видно в «Родина».</li></ol></div>
+  </section>
+  <section class="sec has-shot" id="plans">
+    <div class="txt"><h2>Плани: регулярні платежі й цілі</h2>
+    <p class="why">Щоб не забути про оплати і бачити, скільки зібрали на мрію.</p>
+    <ol class="steps"><li>Відкрийте вкладку «Плани».</li><li>Регулярні платежі: «Додати» — назва, сума, день. Жито нагадає.</li><li>Цілі: «Додати» — на що збираєте і скільки треба.</li><li>Жито саме помітить підписки, які списуються щомісяця, і запропонує додати їх.</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/plans.jpg" alt="Плани: регулярні платежі й цілі — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec has-shot" id="analytics">
+    <div class="txt"><h2>Куди йдуть гроші</h2>
+    <p class="why">Видно, на що витрачаєте найбільше, — висновки робите ви самі.</p>
+    <ol class="steps"><li>Відкрийте вкладку «Аналітика».</li><li>Угорі перемикайте витрати, доходи й баланс.</li><li>Торкніться категорії — побачите всі її записи.</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/analytics.jpg" alt="Куди йдуть гроші — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec has-shot" id="pro">
+    <div class="txt"><h2>Pro і 14 днів безкоштовно</h2>
+    <p class="why">Pro додає безлімітний AI, monobank, Apple Pay і Родину. Спершу 14 днів безкоштовно.</p>
+    <ol class="steps"><li>Відкрийте «Налаштування» і торкніться картки Pro.</li><li>Оберіть «щороку» або «щомісяця» і почніть пробний період.</li><li>Скасувати можна будь-коли в налаштуваннях підписок App Store або Google Play — щонайменше за добу до кінця пробних днів, і гроші не спишуться.</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/pro.jpg" alt="Pro і 14 днів безкоштовно — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec has-shot" id="help">
+    <div class="txt"><h2>Налаштування і допомога</h2>
+    <p class="why">Мова, валюта, блокування і зв’язок з нами — в одному місці.</p>
+    <ol class="steps"><li>Відкрийте вкладку «Налаштування».</li><li>Тут мова, головна валюта і захист Face ID чи відбитком.</li><li>Ця інструкція завжди тут: «Як користуватися Жито».</li><li>Питання — «Підтримка», ми відповідаємо на пошту.</li></ol></div>
+    <figure class="shot"><img src="/guide/img/uk/settings.jpg" alt="Налаштування і допомога — Так це виглядає" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <p>Не знайшли відповіді? Напишіть нам — відповімо українською. <a href="mailto:support@zhyto.app">support@zhyto.app</a></p>
+  <footer><span>© 2026 Styk Labs</span><span><a href="/">Головна</a> · <a href="/privacy/">Конфіденційність</a> · <a href="mailto:support@zhyto.app">Підтримка</a></span></footer>
+</div>
+</body>
+</html>

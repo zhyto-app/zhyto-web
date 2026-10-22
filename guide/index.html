@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zhyto guide · Zhyto</title>
+<meta name="description" content="How to use Zhyto">
+<meta name="theme-color" content="#0F2E2A">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="alternate" hreflang="uk" href="https://zhyto.app/guide/uk/"><link rel="alternate" hreflang="en" href="https://zhyto.app/guide/en/"><link rel="alternate" hreflang="pl" href="https://zhyto.app/guide/pl/"><link rel="alternate" hreflang="de" href="https://zhyto.app/guide/de/"><link rel="alternate" hreflang="fr" href="https://zhyto.app/guide/fr/"><link rel="alternate" hreflang="es" href="https://zhyto.app/guide/es/"><link rel="alternate" hreflang="it" href="https://zhyto.app/guide/it/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; padding: 0; list-style: none; }
+.toc a { display: inline-block; padding: 8px 14px; border-radius: 999px; background: var(--s1); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 14px; }
+.sec { background: var(--s1); border: 1px solid var(--line); border-radius: 22px; padding: 22px; margin: 18px 0; display: flex; flex-direction: column; gap: 18px; }
+.sec .txt { display: flex; flex-direction: column; gap: 10px; }
+.sec h2 { margin: 0; }
+.sec .why { color: var(--muted); margin: 0; font-size: 17px; }
+.sec .steps { margin: 0; }
+.sec .steps li { font-size: 17px; }
+.shot { margin: 0; text-align: center; }
+.shot img { width: 100%; max-width: 300px; border-radius: 28px; border: 1px solid var(--line); box-shadow: 0 12px 32px rgba(15,46,42,.14); }
+.langs { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 14px; }
+.langs a { color: var(--muted); text-decoration: none; }
+.langs b { color: var(--ink); font-weight: 600; }
+@media (min-width: 700px) { .sec.has-shot { flex-direction: row; align-items: flex-start; } .sec.has-shot .txt { flex: 1; } .sec.has-shot .shot { width: 280px; flex: none; } }
+</style>
+<script>
+(function () {
+  var l = ((navigator.languages && navigator.languages[0]) || navigator.language || 'en').slice(0, 2).toLowerCase();
+  var ok = ['uk','en','pl','de','fr','es','it'];
+  location.replace('/guide/' + (ok.indexOf(l) >= 0 ? l : 'en') + '/');
+})();
+</script>
+</head>
+<body><div class="wrap"><h1>Zhyto</h1><ul class="toc"><li><a href="/guide/uk/" hreflang="uk">Українська</a></li><li><a href="/guide/en/" hreflang="en">English</a></li><li><a href="/guide/pl/" hreflang="pl">Polski</a></li><li><a href="/guide/de/" hreflang="de">Deutsch</a></li><li><a href="/guide/fr/" hreflang="fr">Français</a></li><li><a href="/guide/es/" hreflang="es">Español</a></li><li><a href="/guide/it/" hreflang="it">Italiano</a></li></ul></div></body></html>
