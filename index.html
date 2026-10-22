@@ -3,46 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Жито — бюджет для себе і для родини · Zhyto</title>
-<meta name="description" content="Жито (Zhyto) — застосунок для особистого й сімейного бюджету. Записуйте витрати голосом, фото чека або скріншотом банку.">
+<title>Жито — бюджет для себе і для родини</title>
+<meta name="description" content="Жито записує витрати майже само: monobank, Apple Pay, фото чека чи голос. Усі рахунки й валюти в одному місці, а з родиною — один бюджет на двох.">
 <meta name="theme-color" content="#0F2E2A">
+<meta property="og:title" content="Жито — бюджет для себе і для родини"><meta property="og:description" content="Жито записує витрати майже само: monobank, Apple Pay, фото чека чи голос. Усі рахунки й валюти в одному місці, а з родиною — один бюджет на двох."><meta property="og:image" content="https://zhyto.app/icon.png">
+<link rel="canonical" href="https://zhyto.app/"><link rel="alternate" hreflang="uk" href="https://zhyto.app/"><link rel="alternate" hreflang="en" href="https://zhyto.app/en/"><link rel="alternate" hreflang="pl" href="https://zhyto.app/pl/"><link rel="alternate" hreflang="de" href="https://zhyto.app/de/"><link rel="alternate" hreflang="fr" href="https://zhyto.app/fr/"><link rel="alternate" hreflang="es" href="https://zhyto.app/es/"><link rel="alternate" hreflang="it" href="https://zhyto.app/it/">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<style>
+.hero2 { display: flex; flex-direction: column; gap: 28px; padding: 8px 0 12px; }
+.hero2 .shot img { width: 100%; height: auto; max-width: 300px; border-radius: 30px; border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(15,46,42,.18); }
+.hero2 .shot { text-align: center; margin: 0; }
+.store { display: inline-flex; flex-direction: column; padding: 10px 18px; border-radius: 14px; background: var(--green); color: #F5EEDC; text-decoration: none; min-width: 150px; }
+.store small { font-size: 12px; opacity: .8; } .store b { font: 700 17px/1.2 'Geologica', sans-serif; }
+.trial { color: var(--accent); font-weight: 600; margin: 14px 0 0; }
+.langs { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 14px; } .langs a { color: var(--muted); text-decoration: none; } .langs b { color: var(--ink); font-weight: 600; }
+@media (prefers-color-scheme: dark) { .store { background: #E4B456; color: #0F2E2A; } }
+@media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } .hero2 { flex-direction: row; align-items: center; } .hero2 .txt { flex: 1; } .hero2 .shot { width: 300px; flex: none; } }
+</style>
+<script>
+(function () {
+  try { if (sessionStorage.getItem('zl') || document.referrer.indexOf(location.host) > -1) return; sessionStorage.setItem('zl', '1'); } catch (e) {}
+  var l = ((navigator.languages && navigator.languages[0]) || navigator.language || '').slice(0, 2).toLowerCase();
+  // Phone language decides: ours → that page; Ukrainian or Russian → stay here; anything else → English.
+  if (['en','pl','de','fr','es','it'].indexOf(l) > -1) location.replace('/' + l + '/');
+  else if (l && l !== 'uk' && l !== 'ru') location.replace('/en/');
+})();
+</script>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="/"><img src="/icon.png" alt=""><span>Жито · Zhyto</span></a>
-    <nav><a href="/privacy/">Конфіденційність</a><a href="#en">English</a><a href="mailto:support@zhyto.app">Підтримка</a></nav>
+    <a class="brand" href="/"><img src="/icon.png" alt=""><span>Жито</span></a>
+    <nav class="langs"><b>Українська</b><a href="/en/" hreflang="en">English</a><a href="/pl/" hreflang="pl">Polski</a><a href="/de/" hreflang="de">Deutsch</a><a href="/fr/" hreflang="fr">Français</a><a href="/es/" hreflang="es">Español</a><a href="/it/" hreflang="it">Italiano</a></nav>
   </header>
-
-  <section class="hero">
-    <img class="icon" src="/icon.png" alt="Значок застосунку Жито">
-    <h1>Гроші ростуть, <span class="gold">коли їх видно</span></h1>
-    <p class="lead">Жито — застосунок для особистого й сімейного бюджету. Записуйте витрати голосом, фото чека або скріншотом банку. Усі рахунки й валюти в одному місці, плани і цілі — поруч.</p>
-    <div class="badges">
-      <span class="badge"><b>App Store</b> незабаром</span>
-      <span class="badge"><b>Google Play</b> незабаром</span>
+  <section class="hero2">
+    <div class="txt">
+      <h1>Гроші ростуть, <span class="gold">коли їх видно</span></h1>
+      <p class="lead">Жито записує витрати майже само: monobank, Apple Pay, фото чека чи голос. Усі рахунки й валюти в одному місці, а з родиною — один бюджет на двох.</p>
+      <div class="badges">
+        <a class="store" href="/get/" data-store="https://apps.apple.com/app/id6824071195"><small>5 листопада</small><b>App Store</b></a>
+        <a class="store" href="/get/" data-store="https://play.google.com/store/apps/details?id=app.zhyto"><small>5 листопада</small><b>Google Play</b></a>
+      </div>
+      <p class="trial">14 днів Pro безкоштовно</p>
     </div>
+    <figure class="shot"><img src="/guide/img/uk/home.jpg" alt="Жито" width="390" height="844"></figure>
   </section>
-  <div class="grid">
-    <div class="card"><h3>Швидкий запис</h3><p>Скажіть «кава 85» або сфотографуйте чек — Жито розкладе суми за категоріями.</p></div>
-    <div class="card"><h3>Усі рахунки</h3><p>Картки, готівка, кредитки з лімітом і заощадження в 8 валютах за курсом дня.</p></div>
-    <div class="card"><h3>Плани</h3><p>Регулярні платежі з нагадуваннями, цілі, борги й ліміти за категоріями.</p></div>
-    <div class="card"><h3>Спільний бюджет</h3><p>Запросіть партнера кодом: спільні витрати видно разом, приватні — лише вам.</p></div>
-  </div>
-  <hr id="en">
-  <h2>Zhyto in English</h2>
-  <p class="lead" style="font-size:17px">Zhyto is a personal and family budget app. Log spending by voice, receipt photo or bank screenshot, keep every account and currency in one place, plan recurring payments and goals, and share a budget with your partner. Coming soon to the App Store and Google Play.</p>
-
+  <div class="grid"><div class="card"><h3>Записує саме</h3><p>monobank і Apple Pay додають витрати без вас. Решту — фото чека, скріншот банку або «кава 85» голосом.</p></div><div class="card"><h3>Усі гроші разом</h3><p>Картки, готівка, кредитки й заощадження у 8 валютах за курсом дня.</p></div><div class="card"><h3>Бюджет на двох</h3><p>Кожен вносить своє, спільне видно обом, особисте лишається особистим.</p></div><div class="card"><h3>Плани без сюрпризів</h3><p>Регулярні платежі з нагадуваннями, цілі й підписки, які Жито помічає саме.</p></div></div>
+  <p class="meta">Ваші дані належать вам: без реклами, сервер у ЄС, токен банку лише на телефоні.</p>
   <footer>
     <span>© 2026 Styk Labs</span>
-    <span><a href="/privacy/">Конфіденційність / Privacy</a> · <a href="/terms/">Умови / Terms</a> · <a href="/delete-account/">Видалення акаунта</a> · <a href="mailto:support@zhyto.app">support@zhyto.app</a></span>
+    <span><a href="/guide/uk/">Як користуватися</a> · <a href="/privacy/">Конфіденційність</a> · <a href="/terms/">Умови</a> · <a href="/delete-account/">Видалення акаунта</a> · <a href="mailto:support@zhyto.app">Підтримка</a></span>
   </footer>
 </div>
+<script>
+(function () {
+  // Until the stores go live the buttons show the date; from 5 November they lead to the stores.
+  if (Date.now() < Date.UTC(2026, 10, 5, 7)) return;
+  document.querySelectorAll('[data-store]').forEach(function (a) { a.href = a.getAttribute('data-store'); var s = a.querySelector('small'); if (s) s.remove(); });
+})();
+</script>
 </body>
 </html>

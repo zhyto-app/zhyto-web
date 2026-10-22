@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zhyto — Budget für dich und deine Familie</title>
+<meta name="description" content="Zhyto erfasst Ausgaben fast von selbst: Apple Pay, Fotos vom Kassenbon, Screenshots aus der Bank-App oder per Stimme. Alle Konten und Währungen an einem Ort — und ein Budget für zwei.">
+<meta name="theme-color" content="#0F2E2A">
+<meta property="og:title" content="Zhyto — Budget für dich und deine Familie"><meta property="og:description" content="Zhyto erfasst Ausgaben fast von selbst: Apple Pay, Fotos vom Kassenbon, Screenshots aus der Bank-App oder per Stimme. Alle Konten und Währungen an einem Ort — und ein Budget für zwei."><meta property="og:image" content="https://zhyto.app/icon.png">
+<link rel="canonical" href="https://zhyto.app/de/"><link rel="alternate" hreflang="uk" href="https://zhyto.app/"><link rel="alternate" hreflang="en" href="https://zhyto.app/en/"><link rel="alternate" hreflang="pl" href="https://zhyto.app/pl/"><link rel="alternate" hreflang="de" href="https://zhyto.app/de/"><link rel="alternate" hreflang="fr" href="https://zhyto.app/fr/"><link rel="alternate" hreflang="es" href="https://zhyto.app/es/"><link rel="alternate" hreflang="it" href="https://zhyto.app/it/">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+.hero2 { display: flex; flex-direction: column; gap: 28px; padding: 8px 0 12px; }
+.hero2 .shot img { width: 100%; height: auto; max-width: 300px; border-radius: 30px; border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(15,46,42,.18); }
+.hero2 .shot { text-align: center; margin: 0; }
+.store { display: inline-flex; flex-direction: column; padding: 10px 18px; border-radius: 14px; background: var(--green); color: #F5EEDC; text-decoration: none; min-width: 150px; }
+.store small { font-size: 12px; opacity: .8; } .store b { font: 700 17px/1.2 'Geologica', sans-serif; }
+.trial { color: var(--accent); font-weight: 600; margin: 14px 0 0; }
+.langs { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 14px; } .langs a { color: var(--muted); text-decoration: none; } .langs b { color: var(--ink); font-weight: 600; }
+@media (prefers-color-scheme: dark) { .store { background: #E4B456; color: #0F2E2A; } }
+@media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } .hero2 { flex-direction: row; align-items: center; } .hero2 .txt { flex: 1; } .hero2 .shot { width: 300px; flex: none; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/de/"><img src="/icon.png" alt=""><span>Zhyto</span></a>
+    <nav class="langs"><a href="/" hreflang="uk">Українська</a><a href="/en/" hreflang="en">English</a><a href="/pl/" hreflang="pl">Polski</a><b>Deutsch</b><a href="/fr/" hreflang="fr">Français</a><a href="/es/" hreflang="es">Español</a><a href="/it/" hreflang="it">Italiano</a></nav>
+  </header>
+  <section class="hero2">
+    <div class="txt">
+      <h1>Geld wächst, <span class="gold">wenn man es sieht</span></h1>
+      <p class="lead">Zhyto erfasst Ausgaben fast von selbst: Apple Pay, Fotos vom Kassenbon, Screenshots aus der Bank-App oder per Stimme. Alle Konten und Währungen an einem Ort — und ein Budget für zwei.</p>
+      <div class="badges">
+        <a class="store" href="/get/" data-store="https://apps.apple.com/app/id6824071195"><small>5. November</small><b>App Store</b></a>
+        <a class="store" href="/get/" data-store="https://play.google.com/store/apps/details?id=app.zhyto"><small>5. November</small><b>Google Play</b></a>
+      </div>
+      <p class="trial">14 Tage Pro gratis</p>
+    </div>
+    <figure class="shot"><img src="/guide/img/de/home.jpg" alt="Zhyto" width="390" height="844"></figure>
+  </section>
+  <div class="grid"><div class="card"><h3>Erfasst von selbst</h3><p>Apple Pay trägt Käufe ohne dich ein. Den Rest per Kassenbon-Foto, Bank-Screenshot oder „Kaffee 3“ per Stimme.</p></div><div class="card"><h3>Dein ganzes Geld</h3><p>Karten, Bargeld, Kreditkarten und Erspartes in 8 Währungen zum Tageskurs.</p></div><div class="card"><h3>Ein Budget für zwei</h3><p>Jeder trägt seins ein, Gemeinsames sehen beide, Privates bleibt privat.</p></div><div class="card"><h3>Pläne ohne Überraschungen</h3><p>Feste Zahlungen mit Erinnerung, Sparziele und Abos, die Zhyto selbst erkennt.</p></div></div>
+  <p class="meta">Deine Daten gehören dir: keine Werbung, Server in der EU.</p>
+  <footer>
+    <span>© 2026 Styk Labs</span>
+    <span><a href="/guide/de/">Anleitung</a> · <a href="/privacy/">Datenschutz</a> · <a href="/terms/">AGB</a> · <a href="/delete-account/">Konto löschen</a> · <a href="mailto:support@zhyto.app">Support</a></span>
+  </footer>
+</div>
+<script>
+(function () {
+  // Until the stores go live the buttons show the date; from 5 November they lead to the stores.
+  if (Date.now() < Date.UTC(2026, 10, 5, 7)) return;
+  document.querySelectorAll('[data-store]').forEach(function (a) { a.href = a.getAttribute('data-store'); var s = a.querySelector('small'); if (s) s.remove(); });
+})();
+</script>
+</body>
+</html>
