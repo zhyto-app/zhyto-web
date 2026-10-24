@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Оберіть слоган Жито</title>
-<meta name="description" content="Допоможіть обрати слоган для українського застосунку бюджету: 6 коротких раундів, 1–2 хвилини, анонімно.">
+<meta name="description" content="Допоможіть обрати слоган для українського застосунку бюджету: 7 коротких раундів, 1–2 хвилини, анонімно.">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Допоможіть обрати слоган Жито">
-<meta property="og:description" content="Українська команда робить застосунок для бюджету. 6 коротких раундів, 1–2 хвилини, анонімно.">
-<meta property="og:image" content="https://zhyto.app/vote/og.png?v=2">
+<meta property="og:description" content="Українська команда робить застосунок для бюджету. 7 коротких раундів, 1–2 хвилини, анонімно.">
+<meta property="og:image" content="https://zhyto.app/vote/og.png?v=3">
 <meta property="og:url" content="https://zhyto.app/vote/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0F2E2A">
@@ -46,7 +46,7 @@ input.t{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--l
 
   <section class="step on" id="s0">
     <h1>Допоможіть обрати слоган</h1>
-    <p class="lead">Ми — невелика українська команда, робимо Жито: застосунок, який веде бюджет майже сам. Обираємо фразу біля логотипа. 6 коротких раундів, 1–2 хвилини, анонімно.</p>
+    <p class="lead">Ми — невелика українська команда, робимо Жито: застосунок, який веде бюджет майже сам. Обираємо фразу біля логотипа. 7 коротких раундів, 1–2 хвилини, анонімно.</p>
     <button class="btn" data-next>Почати</button>
   </section>
 
@@ -100,10 +100,12 @@ input.t{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--l
     grain: '<span>Зерно до зерна.</span>',
     seedmatters: 'Кожна зернина <span>має значення.</span>',
     small: 'З малих зерен — <span>велике.</span>',
-    place: 'Усе стає <span>на свої місця.</span>'
+    place: 'Усе стає <span>на свої місця.</span>',
+    grow: 'Гроші ростуть, <span>коли їх видно.</span>'
   };
-  // Six sets of four: each phrase appears 4 times (left-out pairs form a balanced design); labels and order shuffled per person.
-  var OUT = [[0, 1], [2, 3], [4, 5], [0, 2], [1, 4], [3, 5]];
+  // Seven sets of four: the left-out triples are the lines of the Fano plane, so each phrase appears 4 times and every
+  // pair of phrases meets exactly twice (a balanced design); labels and order shuffled per person.
+  var OUT = [[0, 1, 2], [0, 3, 4], [0, 5, 6], [1, 3, 5], [1, 4, 6], [2, 3, 6], [2, 4, 5]];
   var shuffle = function (a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
   var ids = shuffle(Object.keys(TXT));
   var sets = shuffle(OUT.map(function (o) { return shuffle(ids.filter(function (_, k) { return o.indexOf(k) < 0; })); }));
@@ -144,7 +146,7 @@ input.t{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--l
       .catch(function () { b.disabled = false; alert('Не вдалося надіслати. Спробуйте ще раз.'); });
   };
   document.getElementById('share').onclick = function () {
-    var d = { title: 'Оберіть слоган Жито', text: 'Допоможи обрати слоган для українського застосунку бюджету — 6 коротких раундів, 1–2 хвилини', url: 'https://zhyto.app/vote/' };
+    var d = { title: 'Оберіть слоган Жито', text: 'Допоможи обрати слоган для українського застосунку бюджету — 7 коротких раундів, 1–2 хвилини', url: 'https://zhyto.app/vote/' };
     if (navigator.share) navigator.share(d).catch(function () {}); else { navigator.clipboard && navigator.clipboard.writeText(d.url); alert('Посилання скопійовано'); }
   };
 })();
