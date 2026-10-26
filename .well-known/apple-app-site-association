@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["66HHXZQZBC.app.zhyto"],
+        "components": [
+          { "/": "/get", "comment": "partner (?c=) and friend (?r=) codes" },
+          { "/": "/get/*" },
+          { "/": "/invite", "comment": "friend invite (?r=)" },
+          { "/": "/invite/*" }
+        ]
+      }
+    ]
+  }
+}
