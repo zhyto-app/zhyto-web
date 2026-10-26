@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.zhyto",
+      "sha256_cert_fingerprints": [
+        "57:47:10:2F:D6:C8:BB:5E:54:15:4A:6B:7A:14:84:CB:8A:31:55:00:CE:B4:AB:6B:99:5C:D2:9F:91:22:B4:DE"
+      ]
+    }
+  }
+]
