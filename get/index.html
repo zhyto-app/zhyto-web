@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Завантажити Жито · Get Zhyto</title>
-<meta name="description" content="Посилання на Жито в App Store і Google Play.">
+<meta name="description" content="Жито в App Store і Google Play. Zhyto on the App Store and Google Play.">
 <meta name="theme-color" content="#0F2E2A">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/icon.png">
@@ -12,6 +12,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<style>
+  .stores{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+  .store{display:inline-block;padding:14px 22px;border-radius:14px;background:#0F2E2A;color:#fff;font-weight:600;text-decoration:none}
+  .store.off{background:#d9d4c7;color:#5b574d;pointer-events:none}
+  .code{display:none;margin:18px 0;padding:16px;border-radius:14px;background:#f3efe4}
+  .code b{font-size:22px;letter-spacing:1px}
+  .code button{margin-left:10px;padding:8px 14px;border:0;border-radius:10px;background:#C8552B;color:#fff;font-weight:600}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -20,21 +28,75 @@
     <nav><a href="/">Головна</a><a href="mailto:support@zhyto.app">Підтримка</a></nav>
   </header>
 
-  <h1>Завантажити Жито</h1>
-  <p class="lead">Застосунок зараз на закритому тестуванні. Щойно він з'явиться в магазинах, тут будуть посилання.</p>
-  <div class="badges">
-    <span class="badge"><b>App Store</b> незабаром</span>
-    <span class="badge"><b>Google Play</b> незабаром</span>
+  <h1 id="t">Завантажити Жито</h1>
+  <p class="lead" id="lead">Бюджет, який записує себе сам.</p>
+
+  <div class="code" id="codebox"><span id="codelabel">Ваш код:</span> <b id="code"></b><button id="copy" type="button">Копіювати</button>
+    <p id="codehint" style="margin:8px 0 0">Після встановлення введіть його в Жито: Налаштування → «Маю код».</p></div>
+
+  <div class="stores">
+    <a class="store" id="ios" href="#">App Store</a>
+    <a class="store" id="android" href="#">Google Play</a>
   </div>
-  <p>Хочете потрапити до тестувальників? Напишіть на <a href="mailto:hello@styklabs.com?subject=Zhyto%20beta">hello@styklabs.com</a>.</p>
-  <hr>
-  <h2>Get Zhyto</h2>
-  <p>The app is in closed testing. Store links will appear here at launch. Want to join the beta? Email <a href="mailto:hello@styklabs.com?subject=Zhyto%20beta">hello@styklabs.com</a>.</p>
+  <p id="soon" style="display:none">Жито зараз на фінальній перевірці в магазинах — посилання запрацюють найближчими днями. Код вище збережеться.</p>
 
   <footer>
     <span>© 2026 Styk Labs</span>
     <span><a href="/privacy/">Конфіденційність / Privacy</a> · <a href="/terms/">Умови / Terms</a> · <a href="/delete-account/">Видалення акаунта</a> · <a href="mailto:support@zhyto.app">support@zhyto.app</a></span>
   </footer>
 </div>
+<script>
+// Which stores are live. Flip to true on release day (the only change needed).
+var LIVE = { ios: false, android: false };
+var APP_ID = '6824071195', PKG = 'app.zhyto';
+
+var q = new URLSearchParams(location.search);
+var clean = function (v) { return (v || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 32); };
+var c = clean(q.get('c')), r = clean(q.get('r')), s = clean(q.get('s'));
+var ua = navigator.userAgent;
+var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+var isAndroid = /Android/.test(ua);
+var en = !/^uk/i.test(navigator.language || '');
+
+if (en) {
+  document.documentElement.lang = 'en';
+  document.getElementById('t').textContent = 'Get Zhyto';
+  document.getElementById('lead').textContent = 'The budget that records itself.';
+  document.getElementById('codelabel').textContent = 'Your code:';
+  document.getElementById('copy').textContent = 'Copy';
+  document.getElementById('codehint').textContent = 'After installing, enter it in Zhyto: Settings → "I have a code".';
+  document.getElementById('soon').textContent = 'Zhyto is in final store review — the links will work within days. Your code above stays valid.';
+}
+
+// Google Play: the codes travel through the install referrer, so nothing needs to be typed.
+var ref = [c && 'c=' + c, r && 'r=' + r, s && 's=' + s].filter(Boolean).join('&');
+var play = 'https://play.google.com/store/apps/details?id=' + PKG + (ref ? '&referrer=' + encodeURIComponent(ref) : '');
+// App Store: a partner code is an Apple offer code — this link redeems it and installs the app in one step.
+var appstore = c ? 'https://apps.apple.com/redeem?ctx=offercodes&id=' + APP_ID + '&code=' + encodeURIComponent(c)
+                 : 'https://apps.apple.com/app/id' + APP_ID;
+
+var ios = document.getElementById('ios'), android = document.getElementById('android');
+ios.href = appstore; android.href = play;
+if (!LIVE.ios) ios.classList.add('off');
+if (!LIVE.android) android.classList.add('off');
+if (!LIVE.ios || !LIVE.android) document.getElementById('soon').style.display = '';
+if (isIOS) android.style.display = 'none';
+if (isAndroid) ios.style.display = 'none';
+
+// A code to type by hand: a friend's code on iPhone (Apple can't pass it through the install), or any code before launch.
+var manual = (isIOS && r) ? r : ((!LIVE.ios && isIOS) || (!LIVE.android && isAndroid) || (!isIOS && !isAndroid)) ? (c || r) : '';
+if (manual) {
+  document.getElementById('code').textContent = manual;
+  document.getElementById('codebox').style.display = 'block';
+  document.getElementById('copy').onclick = function () {
+    (navigator.clipboard ? navigator.clipboard.writeText(manual) : Promise.reject()).then(function () {
+      document.getElementById('copy').textContent = en ? 'Copied' : 'Скопійовано';
+    }).catch(function () {});
+  };
+}
+
+// Straight to the store when it's live and we know the platform.
+if ((isIOS && LIVE.ios && !(r && !c)) || (isAndroid && LIVE.android)) location.replace(isIOS ? appstore : play);
+</script>
 </body>
 </html>
