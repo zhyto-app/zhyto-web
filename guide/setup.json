@@ -1,8 +1,13 @@
 {
   "links": {
     "applePay": "https://www.icloud.com/shortcuts/8f5d4c0d239e4ad0be7af700b8baa539",
-    "bank": "https://www.icloud.com/shortcuts/7c5d8d8576894bcf9155c7669d268c7b"
+    "bank": "https://www.icloud.com/shortcuts/b632232e3ba14254bb5c735065843e0e"
   },
-  "names": { "applePay": "Zhyto · Apple Pay", "bank": "Zhyto · Сповіщення банку" },
-  "video": { "applePay26": "https://zhyto.app/guide/applepay-en.mp4" }
+  "names": {
+    "applePay": "Zhyto · Apple Pay",
+    "bank": "Zhyto · Bank"
+  },
+  "video": {
+    "applePay26": "https://zhyto.app/guide/applepay-en.mp4"
+  }
 }
