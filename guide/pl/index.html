@@ -39,7 +39,7 @@
   </header>
   <h1>Jak korzystać z Zhyto</h1>
   <p class="lead">Krótko i krok po kroku. Każda część to jedna sprawa i kilka dotknięć.</p>
-  <ul class="toc" aria-label="Spis treści"><li><a href="#home">Ekran główny</a></li><li><a href="#add">Zapisz wydatek</a></li><li><a href="#income">Dochód i wypłata</a></li><li><a href="#categories">Własne kategorie</a></li><li><a href="#accounts">Konta i karty</a></li><li><a href="#monobank">monobank sam dodaje wydatki</a></li><li><a href="#applepay">Apple Pay na iPhonie</a></li><li><a href="#android">Powiadomienia banku na Androidzie</a></li><li><a href="#family">Rodzina: budżet razem</a></li><li><a href="#plans">Plany: stałe płatności i cele</a></li><li><a href="#analytics">Na co idą pieniądze</a></li><li><a href="#pro">Pro i 14 dni za darmo</a></li><li><a href="#help">Ustawienia i pomoc</a></li></ul>
+  <ul class="toc" aria-label="Spis treści"><li><a href="#home">Ekran główny</a></li><li><a href="#add">Zapisz wydatek</a></li><li><a href="#income">Dochód i wypłata</a></li><li><a href="#categories">Własne kategorie</a></li><li><a href="#accounts">Konta i karty</a></li><li><a href="#monobank">monobank sam dodaje wydatki</a></li><li><a href="#applepay">Apple Pay na iPhonie</a></li><li><a href="#iphonebank">Powiadomienia banku na iPhonie</a></li><li><a href="#import">Przejdź z innej aplikacji</a></li><li><a href="#capital">Kapitał: wszystko, co masz</a></li><li><a href="#android">Powiadomienia banku na Androidzie</a></li><li><a href="#family">Rodzina: budżet razem</a></li><li><a href="#plans">Plany: stałe płatności i cele</a></li><li><a href="#analytics">Na co idą pieniądze</a></li><li><a href="#pro">Pro i 14 dni za darmo</a></li><li><a href="#help">Ustawienia i pomoc</a></li></ul>
   <section class="sec has-shot" id="home">
     <div class="txt"><h2>Ekran główny</h2>
     <p class="why">Widać tu, ile zostało na miesiąc i gdzie są pieniądze.</p>
@@ -78,8 +78,23 @@
   <section class="sec has-shot" id="applepay">
     <div class="txt"><h2>Apple Pay na iPhonie</h2>
     <p class="why">Przykładasz iPhone’a do terminala — wydatek już jest w Zhyto. Ustawiasz raz, w około minutę. Funkcja Pro.</p>
-    <ol class="steps"><li>Otwórz „Ustawienia” → „Autozapis Apple Pay”.</li><li>Włącz „Instrukcja wideo: jak to ustawić” i powtarzaj kroki: Skróty → Automatyzacja → „+” → Portfel.</li><li>Pierwsza płatność nową kartą: Zhyto zapyta, na które konto ją zapisywać.</li><li>Zmiana zdania? Na tym samym ekranie dotknij karty w „Karty” i wybierz inne konto — wcześniejsze wpisy też się przeniosą.</li></ol></div>
+    <ol class="steps"><li>Otwórz „Ustawienia” → „Autozapis Apple Pay”.</li><li>iOS 27 i nowsze — trzy przyciski po kolei: „Dodaj skrót” (w Skrótach dotknij „Add Shortcut” i wróć), „Otwórz skrót” (włącz „Automation”), „Uruchom raz” (dotknij „Allow”). Jest „Instrukcja wideo”.</li><li>iOS 26 i starsze: włącz instrukcję wideo na tym samym ekranie i powtarzaj kroki: Skróty → Automatyzacja → „+” → Portfel.</li><li>Pierwsza płatność nową kartą: Zhyto zapyta, na które konto ją zapisywać. Gdy działa, ekran pokaże „Działa”.</li></ol></div>
     <figure class="shot"><img src="/guide/img/pl/walletpay.jpg" alt="Apple Pay na iPhonie — Tak to wygląda" loading="lazy" width="390" height="844"></figure>
+  </section>
+  <section class="sec" id="iphonebank">
+    <div class="txt"><h2>Powiadomienia banku na iPhonie</h2>
+    <p class="why">Przychodzi powiadomienie banku — wydatek lub wpływ już jest w Zhyto, nawet bez Apple Pay. iOS 27 i nowsze. Funkcja Pro.</p>
+    <ol class="steps"><li>Otwórz „Ustawienia” → „Automatyczny zapis”.</li><li>„Dodaj skrót”, potem „Otwórz skrót”: w „When I receive a notification from App” wybierz aplikacje banków i włącz „Automation”.</li><li>„Uruchom raz” → „Allow”. Jest „Instrukcja wideo”.</li><li>Nieznane powiadomienie pojawi się z pytaniem „Co to jest?” — Zhyto zapamięta odpowiedź dla tego banku.</li></ol></div>
+  </section>
+  <section class="sec" id="import">
+    <div class="txt"><h2>Przejdź z innej aplikacji</h2>
+    <p class="why">Historia, konta i kategorie z podkategoriami — w Zhyto w minutę. Za darmo.</p>
+    <ol class="steps"><li>W starej aplikacji znajdź „Eksport” i zapisz wpisy jako CSV lub Excel w Plikach.</li><li>W Zhyto: „Ustawienia” → „Przenieś z innej aplikacji” → „Wybierz plik”.</li><li>Sprawdź, gdzie trafią konta i kategorie, i dotknij „Przenieś”. Duplikaty i salda Zhyto sprawdzi samo.</li><li>Format nieodczytany? „Wyślij do wsparcia” — dodamy go. Import można cofnąć przez 7 dni.</li></ol></div>
+  </section>
+  <section class="sec" id="capital">
+    <div class="txt"><h2>Kapitał: wszystko, co masz</h2>
+    <p class="why">Mieszkanie, lokata, akcje, auto — i jak kapitał rośnie latami: ile wpłacono, a ile zarobiono.</p>
+    <ol class="steps"><li>Karta „Plany” → „Kapitał” → „+ Dodaj”.</li><li>Raz na kwartał Zhyto przypomni o aktualizacji wartości i zapyta o dopłaty, by odróżnić wpłaty od wzrostu.</li><li>Sprzedane lub zamknięte? Na karcie aktywa — „Sprzedane / zamknięte”: cena, wynik i gdzie trafiły pieniądze (konto, inne aktywo lub w kapitale).</li><li>Zamknięte transakcje zachowują historię; sprzedaż można cofnąć.</li></ol></div>
   </section>
   <section class="sec" id="android">
     <div class="txt"><h2>Powiadomienia banku na Androidzie</h2>
