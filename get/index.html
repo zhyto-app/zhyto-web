@@ -47,8 +47,10 @@
 </div>
 <script>
 // Which stores are live. Flip to true on release day (the only change needed).
-var LIVE = { ios: true, android: false };
+var LIVE = { ios: true, android: true };
 var APP_ID = '6824071195', PKG = 'app.zhyto';
+// App Store Connect provider id for campaign links (App Analytics → Sources → Campaigns); empty until known.
+var PT = '';
 
 var q = new URLSearchParams(location.search);
 var clean = function (v) { return (v || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 32); };
@@ -69,11 +71,13 @@ if (en) {
 }
 
 // Google Play: the codes travel through the install referrer, so nothing needs to be typed.
-var ref = [c && 'c=' + c, r && 'r=' + r, s && 's=' + s].filter(Boolean).join('&');
+// The source tag (s=<channel>-<piece>, e.g. ig-bio, fb-quit) also goes as utm_*, which the app reads on first launch.
+var ch = s.split('-')[0];
+var ref = [c && 'c=' + c, r && 'r=' + r, s && 's=' + s, s && 'utm_source=' + ch, s && 'utm_medium=link', s && 'utm_content=' + s].filter(Boolean).join('&');
 var play = 'https://play.google.com/store/apps/details?id=' + PKG + (ref ? '&referrer=' + encodeURIComponent(ref) : '');
 // App Store: a partner code is an Apple offer code — this link redeems it and installs the app in one step.
 var appstore = c ? 'https://apps.apple.com/redeem?ctx=offercodes&id=' + APP_ID + '&code=' + encodeURIComponent(c)
-                 : 'https://apps.apple.com/app/id' + APP_ID;
+                 : 'https://apps.apple.com/app/id' + APP_ID + (s ? '?ct=' + encodeURIComponent(s) + (PT ? '&pt=' + PT : '') + '&mt=8' : '');
 
 var ios = document.getElementById('ios'), android = document.getElementById('android');
 ios.href = appstore; android.href = play;
@@ -95,8 +99,23 @@ if (manual) {
   };
 }
 
-// Straight to the store when it's live and we know the platform.
-if ((isIOS && LIVE.ios && !(r && !c)) || (isAndroid && LIVE.android)) location.replace(isIOS ? appstore : play);
+// Count the click: only the tag, the platform and the language (no cookies, nothing personal).
+var COUNT = 'https://iigtqxmotibulefnixdm.supabase.co/functions/v1/click';
+function count(kind) {
+  try {
+    var u = COUNT + '?s=' + encodeURIComponent(s) + '&p=' + (isIOS ? 'ios' : isAndroid ? 'android' : 'other') + '&l=' + encodeURIComponent((navigator.language || '').slice(0, 2)) + '&k=' + kind;
+    if (window.fetch) fetch(u, { method: 'POST', keepalive: true, mode: 'cors' }).catch(function () {});
+    else (new Image()).src = u;
+  } catch (e) {}
+}
+ios.addEventListener('click', function () { count('store'); });
+android.addEventListener('click', function () { count('store'); });
+
+// Straight to the store when it's live and we know the platform (the count goes first and never blocks the way).
+if ((isIOS && LIVE.ios && !(r && !c)) || (isAndroid && LIVE.android)) {
+  count('store');
+  setTimeout(function () { location.replace(isIOS ? appstore : play); }, 120);
+} else count('open');
 </script>
 </body>
 </html>

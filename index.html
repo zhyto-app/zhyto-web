@@ -62,9 +62,8 @@
 </div>
 <script>
 (function () {
-  // Until the stores go live the buttons show the date; from 5 November they lead to the stores.
-  if (Date.now() < Date.UTC(2026, 10, 5, 7)) return;
-  document.querySelectorAll('[data-store]').forEach(function (a) { a.href = a.getAttribute('data-store'); var s = a.querySelector('small'); if (s) s.remove(); });
+  // Both stores are live: the buttons go through /get/, which counts the click, tags the source and opens the store.
+  document.querySelectorAll('[data-store]').forEach(function (a) { a.href = '/get/?s=site'; var s = a.querySelector('small'); if (s) s.remove(); });
 })();
 </script>
 </body>
